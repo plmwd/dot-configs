@@ -1,0 +1,8 @@
+# Mouse hover doesn't change the focus
+focus_follows_mouse no
+
+# Cursor disappears after n ms
+seat * hide_cursor 6000
+
+# Cursor disappears when typing
+seat * hide_cursor when-typing enabled

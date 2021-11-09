@@ -1,0 +1,62 @@
+theme = "gruvbox-dark"
+icons = "material-nf"
+
+[[block]]
+block = "focused_window"
+max_width = 30
+show_marks = "visible"
+
+[[block]]
+block = "music"
+player = "org.mpris.MediaPlayer2.playerctld"
+buttons = ["prev", "play", "next"]
+
+[[block]]
+block = "cpu"
+interval = 1
+format = "{barchart} {utilization} {frequency}"
+on_click = 'swaymsg exec "kitty --class=floating_shell htop"'
+
+#[[block]]
+#block = "memory"
+#format_mem = "{mem_used}/{mem_total}({mem_used_percents})"
+#format_swap = "{swap_used}/{swap_total}({swap_used_percents})"
+#display_type = "memory"
+#icons = true
+#clickable = true
+#interval = 5
+#warning_mem = 80
+#warning_swap = 80
+#critical_mem = 95
+#critical_swap = 95
+
+
+[[block]]
+block = "networkmanager"
+on_click = 'swaymsg exec "kitty --class=floating_shell nmtui"'
+interface_name_include = ["wlan0|wlp58s0"]
+interface_name_exclude = ["br\\-[0-9a-f]{12}", "docker\\d+"]
+ap_format = "{ssid^12}"
+device_format = "{icon}{ap}"
+
+[[block]]
+block = "bluetooth"
+mac = "A0:8A:F5:B8:01:FD"
+
+[[block]]
+block = "sound"
+step_width = 3
+on_click = 'swaymsg exec "kitty --class=floating_shell pulsemixer"'
+
+[[block]]
+block = "battery"
+interval = 10
+
+[[block]]
+block = "time"
+format = "%a %B %e %I:%M %p"
+timezone = "America/New_York"
+interval = 60
+locale = "en_US"
+on_click = 'swaymsg exec "kitty --class=floating_shell $HOME/.config/sway/scripts/calendar.sh"'
+

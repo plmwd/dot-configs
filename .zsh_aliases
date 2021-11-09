@@ -1,0 +1,16 @@
+alias ls="ls --color"
+alias l="ls -l"
+alias la="ls -a"
+
+alias gits="git status"
+alias gitcm="git commit -m"
+
+alias vi=nvim
+
+alias ssh="kitty +kitten ssh"
+alias icat="kitty +kitten icat"
+
+alias pacin="sudo pacman -S"
+alias pacupdate="sudo pacman -Syyu"
+alias yain="yay -S"
+alias yaupdate="yay -Syyu"

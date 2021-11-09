@@ -1,0 +1,62 @@
+# Read `man 5 sway` for a complete reference.
+
+# Font
+font Fira\ Code\ Nerd 11
+ 
+# Color theme
+include colorschemes/nord
+
+# Basic color configuration using the Base16 variables for windows and borders.
+# Property Name         Border  BG      Text    Indicator Child Border
+client.focused          $base05 $base0D $base00 $base0D $base0D
+client.focused_inactive $base01 $base01 $base05 $base03 $base01
+client.unfocused        $base01 $base00 $base05 $base01 $base01
+client.urgent           $base08 $base08 $base00 $base08 $base08
+client.placeholder      $base00 $base00 $base05 $base00 $base00
+client.background       $base07
+
+gaps inner 15
+gaps outer 10
+
+
+# Mouse hover doesn't change the focus
+focus_follows_mouse no
+
+# Cursor disappears after n ms
+seat * hide_cursor 6000
+
+# Cursor disappears when typing
+seat * hide_cursor when-typing enabled
+
+focus_on_window_activation smart
+
+
+# Define workspaces
+set $ws1 "1:  "
+set $ws2 "2:  "
+set $ws3 "3:  "
+set $ws4 "4:  "
+set $ws5 "5:  "
+set $ws6 "6:  "
+set $ws7 "7:  "
+set $ws8 "8:  "
+set $ws9 "9:  "
+set $ws10 "10:  "
+
+# global variables
+include ./definitions
+
+# Keyboard and display config
+include ./inputs/*
+include ./outputs/*
+
+# enable modes
+include ./modes/*
+
+# only enable this if every app you use is compatible with wayland
+# xwayland disable
+
+# include additional configs
+include ./system/*
+
+default_border pixel 2

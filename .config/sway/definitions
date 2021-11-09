@@ -1,0 +1,84 @@
+### Variables
+#
+# Logo key. Use Mod1 for Alt and Mod4 for Super.
+set $mod Mod4
+
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+
+# background
+#set $background /usr/share/backgrounds/manjaro-sway/gruvbox-dark-manjarosway-3840x2160.png
+#set $background /home/paulw/.config/wallpapers/1920x1080-dark-manjaro.png
+set $background /home/paulw/Pictures/Wallpapers/nord-minimalist.jpg
+
+# styles - matcha-green or matcha-blue
+#set $theme /usr/share/sway/themes/matcha-green
+
+# Your preferred terminal emulator
+# TODO: Use $XDG_CONFIG_HOME
+# TODO: Figure out how sway is currently being launched at startup
+set $term_cwd $XDG_CONFIG_HOME/sway/scripts/terminal-cwd.sh
+set $term /home/paulw/.config/sway/scripts/terminal.sh
+set $term_float $term float
+set $term_float_portrait $term float_portrait
+
+# Your preferred application launcher
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
+set $menu wofi --demenu --show 'drun' -I --prompt "Run Program"  | xargs swaymsg exec --
+
+### Lockscreen configuration
+#
+set $locking /home/paulw/.config/sway/scripts/lockman.sh
+
+### Idle configuration
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+#
+set $idle swayidle -w \
+    timeout 300 'exec $locking' \
+    timeout 600 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+    before-sleep 'exec $locking'
+
+# statusbar command
+#set $statusbar waybar
+#set $waybar_position bottom
+bar {
+    font Fira Code Nerd Font Medium 12
+    position top
+	swaybar_command waybar
+	colors {
+		background $base00
+		separator  $base01
+		statusline $base04
+
+		# State             Border  BG      Text
+		focused_workspace   $base05 $base0D $base00
+		active_workspace    $base05 $base03 $base00
+		inactive_workspace  $base03 $base01 $base05
+		urgent_workspace    $base08 $base08 $base00
+		binding_mode        $base00 $base0A $base00
+	}
+   # output primary
+    tray_output none
+}
+
+# shutdown command
+set $shutdown wlogout --buttons-per-row 3 --protocol layer-shell
+
+# pulseaudio command
+set $pulseaudio $term_float pulsemixer
+
+# help command
+set $help $term_float "man $HOME/.config/sway/help.man"
+
+# onscreen bar
+set $onscreen_bar bash /usr/share/sway/scripts/wob.sh
+
+# calendar application
+set $calendar $term_float "khal interactive"
