@@ -1,0 +1,2 @@
+setxkbmap -option caps:swapescape 
+[ -f $HOME/.fehbg ] && . $HOME/.fehbg &
