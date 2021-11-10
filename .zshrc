@@ -1,9 +1,20 @@
+# vim: ft=bash
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
+load_plugin() {
+	main_file=$XDG_CONFIG_HOME/zsh/plugins/$1/$1.zsh
+	plug_file=$XDG_CONFIG_HOME/zsh/plugins/$1/$1.plugin.zsh
+	if [ -f $main_file ]; then
+		source $main_file
+	elif [ -f $plug_file ]; then
+		source $plug_file
+	fi
+}
 
 # The following lines were added by compinstall
 
@@ -29,7 +40,9 @@ bindkey -e
 source ~/.zsh_aliases
 
 # Plugins
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+load_plugin zsh-syntax-highlighting
+load_plugin zsh-interactive-cd
 
 #eval "$(starship init zsh)"
 # eval "$(zoxide init zsh)"
