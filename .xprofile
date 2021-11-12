@@ -1,2 +1,7 @@
+# vim: ft=sh
 setxkbmap -option caps:swapescape 
 [ -f $HOME/.fehbg ] && . $HOME/.fehbg &
+
+if [[ "$(cat /etc/hostname)" = "paul-laptop" ]]; then
+	xinput set-prop "DLL0704:01 06CB:76AE Touchpad" "libinput Natural Scrolling Enabled" 1
+fi
