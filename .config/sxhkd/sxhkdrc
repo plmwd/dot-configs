@@ -25,6 +25,8 @@ XF86MonBrightnessDown
 XF86Audio{Play,Next,Prev}
 	playerctl {play-pause,prev}
 
+XF86Audio{Mute,LowerVolume,RaiseVolume}
+	amixer -q sset Master {toggle,4%-,4%+}
 
 #
 # bspwm hotkeys
