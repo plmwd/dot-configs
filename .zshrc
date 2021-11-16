@@ -50,6 +50,8 @@ load_plugin zsh-interactive-cd
 # Keybindings
 # bindkey -s '^E' "ranger\n"
 bindkey -s '^f' "fzf\n"
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 
 # Load powerlevel10k prompt
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
