@@ -1,0 +1,15 @@
+#!/bin/zsh
+# vim: ft=sh
+cidrIp=$(ip a | grep -A 3 'wlp\|wlan' | grep 'inet ' | awk '{print $2}') 
+# echo $cidrIp
+sudo nmap -sn $cidrIp \
+  | tail -n +2 \
+  | sed 'N;N;s/\n/ /g' \
+  | awk -v ip=$cidrIp 'BEGIN {
+      print "Scan on "ip; 
+      print "IP\t\tMAC\t\t   Name"
+      } {
+      print $5 "\t" $13 "  " $14
+    }' \
+  | head -n -1 \
+  | tr -d '()'
