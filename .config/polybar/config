@@ -38,13 +38,14 @@ border-color = ${colors.background-alt}
 padding = 0
 module-margin = 0
 
-font-0 = Hack Nerd Font:style=Regular:size=10;2
-font-1 = Iosevka Nerd Font:style=Medium:size=14;3
-font-2 = Noto Sans Mono CJK SC:style=Regular:size=10;1
+font-0 = SFMono Nerd Font Mono:style=Regular:size=10;2
+font-1 = SFMono Nerd Font Mono:style=Regular:size=12;4
+font-2 = SFMono Nerd Font Mono:style=Regular:size=16;4
+font-3 = Iosevka Nerd Font:style=Medium:size=14;3
 
 modules-left    = launch bspwm
 modules-center  = xwindow
-modules-right   = alsa date battery wlan eth xkeyboard 
+modules-right   = cpu alsa battery wlan eth date xkeyboard 
 
 wm-restack = bspwm
 
