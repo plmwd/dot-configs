@@ -1,6 +1,7 @@
-alias ls="ls --color"
-alias l="ls -l"
-alias la="ls -a"
+alias ls="exa"
+alias l="exa --long --git --icons"
+alias ll="exa -a --long --git --icons"
+alias la="exa -a"
 
 alias gits="git status"
 alias gitcm="git commit -m"
