@@ -17,6 +17,19 @@ alias gcm="git commit -m"
 alias gpl="git pull"
 alias gph="git push"
 
+alias ys="yadm status"
+alias yl="yadm log"
+alias yls="yadm list"
+alias ylsa="yadm list -a"
+alias yd="yadm diff"
+alias ya="yadm add"
+alias yac="yadm commit -a"
+alias yacm="yadm commit -a -m"
+alias yc="yadm commit"
+alias ycm="yadm commit -m"
+alias ypl="yadm pull"
+alias yph="yadm push"
+
 alias vi=nvim
 
 alias ssh="kitty +kitten ssh"
