@@ -1,0 +1,8 @@
+#!/bin/zsh
+# vim: ft=sh
+user=$1
+# Need to turn the string into an array, split on word boundaries
+grepArgs=(${@:2})
+echo $grepArgs
+
+ssh -l $user $(netgrep $grepArgs | awk '{print $1}')

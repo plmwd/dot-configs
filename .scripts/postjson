@@ -1,0 +1,14 @@
+#!/bin/zsh
+# vim: ft=sh
+
+error=""
+
+json=$1
+url=$2
+
+[[ ! -z "$POST_URL" ]] && url=$POST_URL
+[[ -z "$json" ]] && echo No json provided && error="1"
+[[ -z "$url" ]] && echo No URL provided && error="1"
+[[ ! -z "$error" ]] && exit 1
+
+curl -H 'content-type: application/json' -d $json $url
