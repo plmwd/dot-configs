@@ -2,9 +2,20 @@ alias ls="exa"
 alias l="exa --long --git --icons"
 alias ll="exa -a --long --git --icons"
 alias la="exa -a"
+alias lt="exa -T"
 
-alias gits="git status"
-alias gitcm="git commit -m"
+alias g=git
+alias gs="git status"
+alias gl="git log"
+alias gls="git ls-files"
+alias gd="git diff"
+alias ga="git add"
+alias gac="git commit -a"
+alias gacm="git commit -a -m"
+alias gc="git commit"
+alias gcm="git commit -m"
+alias gpl="git pull"
+alias gph="git push"
 
 alias vi=nvim
 

@@ -1,6 +1,6 @@
 set font "InputSansNarrow 12"
 
-include colorschemes/rose-pine-moon
+include colorschemes/rose-pine
 
 set recolor                     "true"
 set recolor-keephue             "true"
