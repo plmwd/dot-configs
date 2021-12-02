@@ -14,7 +14,7 @@ notification(){
 menu(){
 	printf "1. Lofi Girl\n"
 	printf "2. Chillhop\n"
-	printf "3. Box Lofi\n"
+	printf "3. Justice Ders\n"
 	printf "4. The Bootleg Boy\n"
 	printf "5. Radio Spinner\n"
 	printf "6. SmoothChill"
@@ -33,8 +33,8 @@ main() {
             URL="https://www.youtube.com/watch?v=fR9BUCk79-Y"
 			;;
 		3)
-			notification "Box Lofi ☕️🎶";
-            URL="http://stream.zeno.fm/f3wvbbqmdg8uv"
+			notification "Justice Der ☕️🎶";
+            URL="https://www.youtube.com/watch?v=mPymRFeTJa4"
 			;;
 		4)
 			notification "The Bootleg Boy ☕️🎶";
