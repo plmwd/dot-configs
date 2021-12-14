@@ -1,15 +1,49 @@
-#!/bin/zsh
-# vim: ft=sh
-cidrIp=$(ip a | grep -A 3 'wlp\|wlan' | grep 'inet ' | awk '{print $2}') 
-# echo $cidrIp
-sudo nmap -sn $cidrIp \
-  | tail -n +2 \
-  | sed 'N;N;s/\n/ /g' \
-  | awk -v ip=$cidrIp 'BEGIN {
-      print "Scan on "ip; 
-      print "IP\t\tMAC\t\t   Name"
-      } {
-      print $5 "\t" $13 "  " $14
-    }' \
-  | head -n -1 \
-  | tr -d '()'
+#!/bin/python
+# vim: ft=python
+# This is one UGGGLLLY script
+
+import subprocess
+import re
+from pprint import pprint
+
+targetProc = subprocess.run(
+    r"ip a | grep -A 3 'wlp\|wlan' | grep 'inet ' | awk '{print $2}'",
+    capture_output=True, shell=True, text=True)
+
+nmapProc = subprocess.run(
+    ['nmap', '-sn', targetProc.stdout.replace('\n', '')], 
+    capture_output=True, text=True)
+
+lines = nmapProc.stdout.split('\n')
+
+ipPat = re.compile(r'scan report for (?P<ip>[\d\.]+)$')
+hostAndMacPat = re.compile(r'MAC Address: +(?P<mac>[\dabcdefABCDEF:]+) +\((?P<host>.+)\)')
+
+ip = ''
+mac = ''
+hostname = ''
+res = {}
+# results = []
+print(f"{'Host':<40}{'IP':<11}\t{'MAC':<21}")
+for (i, line) in enumerate(lines):
+    if i == 0:
+        continue
+
+    j = (i - 1) % 3
+    if (j == 0):
+        match = ipPat.search(line)
+        if not match: continue
+        res['ip'] = match.groupdict()['ip']
+
+    elif (j == 1): continue
+
+    elif (j == 2):
+        match = hostAndMacPat.search(line)
+        if not match: continue
+        res['mac'] = match.groupdict()['mac']
+        res['host'] = match.groupdict()['host']
+
+        print(f"{res['host']:<40}{res['ip']:^}\t{res['mac']:>10}")
+        # resutls = results.append(res)
+
+# pprint(results)

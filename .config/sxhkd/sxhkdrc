@@ -23,7 +23,7 @@ XF86MonBrightnessDown
 
 # Media
 XF86Audio{Play,Next,Prev}
-	playerctl {play-pause,prev}
+	playerctl {play-pause,next,prev}
 
 XF86Audio{Mute,LowerVolume,RaiseVolume}
 	amixer -q sset Master {toggle,4%-,4%+}
@@ -36,6 +36,9 @@ super + ctrl + p
 
 super + ctrl + r
 	reboot
+
+super + ctrl + t
+	floattop
 
 # logout
 super + ctrl + l
