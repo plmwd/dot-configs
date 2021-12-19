@@ -1,0 +1,5 @@
+#!/bin/zsh
+# vim: ft=sh
+
+bspwmfloat kitty --class top -T btop btop
+# xdotool getactivewindow windowsize 50% 50%

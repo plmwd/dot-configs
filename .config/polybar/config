@@ -44,9 +44,9 @@ font-1 = SFMono Nerd Font Mono:style=Regular:size=12;4
 font-2 = SFMono Nerd Font Mono:style=Regular:size=16;4
 font-3 = Iosevka Nerd Font:style=Medium:size=14;3
 
-modules-left    = launch bspwm
+modules-left    = launch bspwm sep awspipeline 
 modules-center  = xwindow
-modules-right   = cpu alsa battery wlan eth date xkeyboard 
+modules-right   = cpu alsa battery wlan eth date 
 
 wm-restack = bspwm
 

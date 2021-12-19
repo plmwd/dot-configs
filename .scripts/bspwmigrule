@@ -1,0 +1,4 @@
+#!/bin/zsh
+bspc rule -a \* -o desktop=focused && $@
+
+# vim: ft=sh

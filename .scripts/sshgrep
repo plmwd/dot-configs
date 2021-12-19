@@ -5,4 +5,4 @@ user=$1
 grepArgs=(${@:2})
 echo $grepArgs
 
-ssh -l $user $(netgrep $grepArgs | awk '{print $1}')
+ssh -l $user $(netgrep $grepArgs | awk '{print $(NF - 1)}')

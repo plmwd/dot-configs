@@ -1,0 +1,5 @@
+#!/bin/zsh
+# vim: ft=sh
+
+rofi -show drun -kb-custom-1 'ctrl-i'
+echo $?

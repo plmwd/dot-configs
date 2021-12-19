@@ -1,0 +1,18 @@
+(defpoll codepipeline_stages :interval "10s" "~/.scripts/eww/ls-codepipeline-stages.sh")
+
+(defwidget greeter [?text name]
+  (box :orientation "horizontal"
+       :halign "center"
+    text
+    (button :onclick "notify-send 'Hello' 'Hello, ${name}'"
+      "Greet")
+    (children)))
+
+(defwidget codepipeline []
+  (eventbox :onhoverlost "eww close codepipeline"
+    (box :orientation "v" :space-evenly false :class "search-win" :halign "top" :valign "top"
+      (literal :halign "center" :valign "center" :class "app-container" :content codepipeline_stages))))
+
+(defwindow codepipeline
+  :geometry (geometry :y "30px")
+  (codepipeline))
