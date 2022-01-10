@@ -1,0 +1,4 @@
+#/bin/zsh
+# vim: ft=sh
+
+yay -S --needed $(cat $XDG_CONFIG_HOME/packages.txt | awk '{print $1}')
