@@ -36,22 +36,39 @@ unsetopt beep extendedglob
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
+## History command configuration
+setopt extended_history       # record timestamp of command in HISTFILE
+setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_ignore_dups       # ignore duplicated commands history list
+setopt hist_ignore_space      # ignore commands that start with space
+setopt hist_verify            # show command with history expansion to user before running it
+setopt share_history          # share command history data
+
 # Aliases
 source ~/.zsh_aliases
 
+ZSH_AUTOSUGGEST_STRATEGY=()
+
 # Plugins
 # source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-load_plugin zsh-syntax-highlighting
+load_plugin zsh-fast-syntax-highlighting
 load_plugin zsh-interactive-cd
+load_plugin fast-syntax-highlighting  
+load_plugin oh-my-zsh_aws2-plugin
+load_plugin zsh-autosuggestions  
+load_plugin zsh-colored-man-pages  
+load_plugin zsh-completions
 
 #eval "$(starship init zsh)"
-# eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh)"
 
 # Keybindings
 # bindkey -s '^E' "ranger\n"
 bindkey -s '^f' "fzf\n"
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
+bindkey '^ ' autosuggest-accept
+bindkey '^e' autosuggest-clear
 
 # Load powerlevel10k prompt
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme

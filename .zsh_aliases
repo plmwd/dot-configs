@@ -5,6 +5,8 @@ alias la="exa -a"
 alias lt="exa -T --git-ignore"
 alias lT="exa -T"
 
+alias cd=z
+
 alias g=git
 alias gs="git status"
 alias gl="git log"
@@ -15,8 +17,8 @@ alias gac="git commit -a"
 alias gacm="git commit -a -m"
 alias gc="git commit"
 alias gcm="git commit -m"
-alias gpl="git pull"
-alias gph="git push"
+alias gp="git pull"
+alias gP="git push"
 
 alias ys="yadm status"
 alias yl="yadm log"
@@ -28,8 +30,8 @@ alias yac="yadm commit -a"
 alias yacm="yadm commit -a -m"
 alias yc="yadm commit"
 alias ycm="yadm commit -m"
-alias ypl="yadm pull"
-alias yph="yadm push"
+alias yp="yadm pull"
+alias yP="yadm push"
 
 alias vi=nvim
 
@@ -37,6 +39,6 @@ alias ssh="kitty +kitten ssh"
 alias icat="kitty +kitten icat"
 
 alias pacin="sudo pacman -S"
-alias pacupdate="sudo pacman -Syyu"
+alias pacup="sudo pacman -Syu"
 alias yain="yay -S"
-alias yaupdate="yay -Syyu"
+alias yaup="yay -Syu"
