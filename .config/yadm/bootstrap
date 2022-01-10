@@ -5,5 +5,5 @@
 # be run from within $HOME (assuming this is the root of your dotfiles)
 cd "$HOME"
 
-systemctl --user enable betterlockscreen
+systemctl enable betterlockscreen@$USER
 yadm submodule update --init --recursive
