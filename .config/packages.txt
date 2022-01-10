@@ -1712,6 +1712,7 @@ zip 3.0-9
 zita-alsa-pcmi 0.4.0-1
 zita-resampler 1.8.0-1
 zlib 1:1.2.11-5
+zoxide 0.8.0-1
 zsh 5.8-1
 zsh-syntax-highlighting 0.7.1-1
 zsh-theme-powerlevel10k-git r3955.6520323-1
