@@ -46,7 +46,7 @@ super + ctrl + l
 
 # media selection
 # Lofi beats
-super + m; l
+super + shift + l
 	lofi
 
 # Screenshot
@@ -61,6 +61,9 @@ super + shift + s; s
 
 super + shift + r
 	rofi -show ssh
+
+super + shift + p
+  bwmenu -c 60
 
 #
 # bspwm hotkeys

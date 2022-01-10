@@ -7,7 +7,6 @@ cmd=$1
 
 case $cmd in
   next | refresh | toggle | eww)
-    echo $cmd
     echo $cmd >$pipe_send
     ;;
   *)
@@ -17,6 +16,7 @@ esac
 
 case $cmd in
   eww)
+    sleep 1 # FIXME: race condition
     cat /tmp/aws_eww
     ;;
   *)

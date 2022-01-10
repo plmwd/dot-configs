@@ -50,7 +50,6 @@ incr() {
 }
 
 gen_eww_list() {
-  echo fuck
   cat $pipeline_state_file | jq -c >/tmp/aws_eww
 }
 

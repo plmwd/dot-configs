@@ -8,5 +8,5 @@ export TERMINAL=kitty
 export GOPATH=$HOME/.go
 [[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
 
-secrets="${HOME}/.secrets.zsh"
+secrets="${HOME}/.secrets"
 [[ -f "${secrets}" ]] && source $secrets

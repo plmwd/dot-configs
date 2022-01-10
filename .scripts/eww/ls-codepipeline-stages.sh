@@ -1,6 +1,7 @@
 #!/bin/zsh
+state=$(aws-pipeline-status-ctl.zsh eww)
 buttons=$(
-  cat /tmp/aws_eww | \
+  echo $state | \
   jq -r 'map(@text "(button
     :class \"item\" 
     :onclick \"xdg-open \\\"\(.url)\\\" &\" 
