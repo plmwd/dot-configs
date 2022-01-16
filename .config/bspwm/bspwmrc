@@ -4,14 +4,10 @@ scripts=$HOME/.scripts
 win_gap=17
 
 function pstart() {
-  exact="-x"
+  exact=("-x")
   cmd=$1
-  prog=$2
-  if [ "$1" = "-a" ]; then
-    exact=""
-    cmd=$2
-    prog=$3
-  fi
+  prog=${@:2}
+  prog_name=$2
 
   case "$cmd" in
     one)
@@ -36,13 +32,14 @@ pstart one $scripts/polybar/launch.sh
 pstart one picom
 pstart one nm-applet
 pstart one dunst
+pstart one dropbox start
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
 bspc config border_radius				  10
 bspc config border_width          2
 bspc config window_gap            $win_gap
-bspc config border_width				  3
+bspc config border_width				  2
 bspc config normal_border_color		'#59546d'
 bspc config active_border_color		'#3e8fb0'
 bspc config focused_border_color	'#ea9a97'

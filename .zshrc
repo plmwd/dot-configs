@@ -68,7 +68,7 @@ bindkey -s '^f' "fzf\n"
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey '^ ' autosuggest-accept
-bindkey '^e' autosuggest-clear
+bindkey '^\' autosuggest-clear
 
 # Load powerlevel10k prompt
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme

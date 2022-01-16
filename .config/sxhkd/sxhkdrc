@@ -46,7 +46,7 @@ super + ctrl + l
 
 # media selection
 # Lofi beats
-super + shift + l
+super + alt + l
 	lofi
 
 # Screenshot
