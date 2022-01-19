@@ -19,3 +19,6 @@
 [submodule ".config/zsh/plugins/fast-syntax-highlighting"]
 	path = .config/zsh/plugins/fast-syntax-highlighting
 	url = https://github.com/zdharma-continuum/fast-syntax-highlighting/
+[submodule ".config/zsh/plugins/zsh-aws"]
+	path = .config/zsh/plugins/zsh-aws
+	url = https://github.com/apachler/zsh-aws

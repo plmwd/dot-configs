@@ -22,8 +22,8 @@ zstyle ':completion:*' completer _complete _ignored _approximate
 zstyle ':completion:*' max-errors 3
 zstyle :compinstall filename '/home/paulw/.zshrc'
 
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
+autoload -Uz bashcompinit && bashcompinit
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -58,6 +58,7 @@ load_plugin oh-my-zsh_aws2-plugin
 load_plugin zsh-autosuggestions  
 load_plugin zsh-colored-man-pages  
 load_plugin zsh-completions
+load_plugin zsh-aws
 
 #eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
