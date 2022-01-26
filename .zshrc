@@ -16,6 +16,7 @@ load_plugin() {
 	fi
 }
 
+
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _complete _ignored _approximate
@@ -60,6 +61,9 @@ load_plugin zsh-colored-man-pages
 load_plugin zsh-completions
 load_plugin zsh-aws
 
+# Add to fpath to load custom functions (like autocomplete)
+fpath+="$XDG_CONFIG_HOME/zsh/functions/"
+
 #eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
@@ -70,6 +74,8 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey '^ ' autosuggest-accept
 bindkey '^\' autosuggest-clear
+bindkey -s '^g' "ranger\n"
+bindkey -s '^r' "source ~/.zshrc\n"
 
 # Load powerlevel10k prompt
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
